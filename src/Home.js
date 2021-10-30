@@ -44,9 +44,13 @@ const Home = ({myMap}) => {
                         const myMap = new Map();
                         
                         for (let [k, v] of Object.entries(maps)) {
-                            if (require('./cards/'+ k).default) {
-                                var cardToRender = require('./cards/'+ k).default
-                                myMap.set(cardToRender(v));
+                            try {
+                                if (require('./cards/'+ k).default) {
+                                    var cardToRender = require('./cards/'+ k).default
+                                    myMap.set(cardToRender(v));
+                                }
+                            } catch(ex) {
+                                console.log("Module [" + k + "] does not exist");
                             }
                         }
                         return myMap;
