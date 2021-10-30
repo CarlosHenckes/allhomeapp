@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app-container {
+  padding: 15px;
+}
+
+div.databox {
+  border-radius: 25px;
+  border: 2px solid #250bb6;
+  margin: 2px;
+  padding: 5px;
+  width: 170px;
+  height: 190px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px darkgrey;
+  background-color: white;
+}
+div.data {
+  width: 100%;
+  padding: 1px 0px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  color: black;
+  line-height: .98;
+  display: inline;
+}
+div.dataescaled {
+  width: 100%;
+  padding: 5px 0px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 1.0em;
+  line-height: .45;
+  color: dimgray;
+  display: inline-block;
+  margin-top: -5px;
+}
+.size30 {
+  font-size: 2.9em;
+}
+.size25 {
+  font-size: 2.3em;
+}
+.size10 {
+  font-size: 1.0em;
+}
+div.icon {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  float: left;
+}
+
+div.label {
+  width: 100%;
+  text-align: center;
+  font-family: Calibri;
+  font-size: 1.1em;
+  text-shadow: 1px 1px #9185fc;
+  position: absolute;
+  display: inline-block;
+  bottom: 8px;
+  transform: translateX(-50%);
+  left: 50%;
+  color: black;
+  clear: both;
+}
+
+.ico_temp path {
+  filter: invert(43%) sepia(96%) saturate(1237%) hue-rotate(88deg) brightness(128%) contrast(119%);
+}
+
+div.row {
+  margin-left: 0;
+}
+
+.centerbox {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.leftcenterbox {
+  width: 15%;
+  line-height: 17px;
+  float: left;
+  text-align: center;
+}
+.righttcenterbox {
+  width: 15%;
+  float: left;
+}
+.uparrow {
+  display: block;
+  transform: rotate(90deg);
+}
+.downarrow {
+  display: block;
+  transform: rotate(-90deg);
+
+}
+.higher {
+  display: block;
+  color: black;
+}
+.lower {
+  display: block;
+  color: black;
+}

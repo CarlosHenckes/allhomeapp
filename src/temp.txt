@@ -1,0 +1,15 @@
+render() {
+    return (
+      <div>
+        <h2>Details</h2>
+        <SockJsClient url='http://localhost:8080/chat' 
+                      topics={['/topic/news']}
+                      onMessage={(msg) => {
+                        console.log(msg);
+                        setCount(msg);
+                      }}
+                      ref={ (client) => { this.clientRef = client }} />
+        <p id="msg">{count.id}</p>
+      </div>
+    );
+  }
