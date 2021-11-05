@@ -1,6 +1,6 @@
 import React from "react";
 
-function hectopascalsToMMMercuty(hpa) {
+function hectopascalsToMMMercury(hpa) {
     return Math.floor(hpa * 0.750062);
 }
 
@@ -11,7 +11,7 @@ const BarometerCard = (t) => {
             <a href="/detail?key=" alt="" title="">
                     <div className="data" id="cardvalue"><span className="size30">{t.value}</span>
                         <span className="size10">hPa</span></div>
-                    <div className="dataescaled" id="cardeq">{hectopascalsToMMMercuty(t.value)}mm/Hg</div>
+                    <div className="dataescaled" id="cardeq">{hectopascalsToMMMercury(t.value)}mm/Hg</div>
                     <div className="centerbox">
                         <div className="leftcenterbox">
                             <img alt="uparrow" src="./arrow.png" className="uparrow" width="15px" />

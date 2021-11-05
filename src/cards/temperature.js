@@ -16,8 +16,8 @@ const TemperatureCard = (t) => {
                     <div className="centerbox">
                         <div className="leftcenterbox">
                             <img src="./arrow.png" className="uparrow" alt="up arrow" width="15px" />
-                            <span className="higher">22</span>
-                            <span className="lower">16</span>
+                            <span className="higher">{t.max}</span>
+                            <span className="lower">{t.min}</span>
                             <img className="downarrow" src="./arrow.png" alt="down arrow" width="15px" />
                         </div>
                     <div className="icon">
