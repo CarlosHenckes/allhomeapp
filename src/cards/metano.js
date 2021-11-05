@@ -5,8 +5,10 @@ const MethaneCard = (t) => {
     return (
         <div className="databox col-sm-6">
 
-                <div className="data size30" id="cardvalue">{t.value}
-                    <span className="size10">ppm</span></div>
+                <div className="data size30" id="cardvalue">
+                    <span className="size30">{t.value}</span>
+                    <span className="size10">ppm</span>
+                </div>
                 <div className="dataescaled" id="cardeq">&nbsp;</div>
             <div className="icon">
             <img id="cardimage" alt="Metano" title="Metano" src="./methane.png" height="70px" className="ico_mgitetano" />
