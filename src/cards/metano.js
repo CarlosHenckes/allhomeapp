@@ -5,7 +5,7 @@ const MethaneCard = (t) => {
     return (
         <div className="databox col-sm-6">
 
-                <div className="data size30" id="cardvalue">
+                <div className="data" id="cardvalue">
                     <span className="size30">{t.value}</span>
                     <span className="size10">ppm</span>
                 </div>
