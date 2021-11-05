@@ -11,7 +11,7 @@ const Home = ({myMap}) => {
     const [responseData, setResponseData] = React.useState(null);
 
     React.useEffect(() => {
-        axios.get(`https://allhomeapi.herokuapp.com/v1/sensors`)
+        axios.get(`http://localhost:9000/v1/sensors`) //https://allhomeapi.herokuapp.com/v1/sensors
             .then((response) => {
                 setResponseData(response.data);
                 console.log(response);
@@ -25,7 +25,7 @@ const Home = ({myMap}) => {
         <div className="app-container">
             <h1>{id}</h1>
             <div className="row">
-            <SockJsClient url='https://allhomeapi.herokuapp.com/chat' 
+            <SockJsClient url='http://localhost:9000/chat' 
                       topics={['/topic/news']}
                       onMessage={(msg) => {
                           console.log(msg);
