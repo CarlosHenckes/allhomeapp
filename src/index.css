@@ -20,6 +20,10 @@ code {
   padding: 15px;
 }
 
+.top-line {
+  border-top: rebeccapurple 3px solid;
+}
+
 div.databox {
   border-radius: 25px;
   border: 2px solid #250bb6;
