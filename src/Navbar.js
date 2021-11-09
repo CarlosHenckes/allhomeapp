@@ -4,13 +4,18 @@ import SockJsClient from 'react-stomp';
 const Navbar = () => {
 
     var menuMap = new Map();
-    menuMap.set('/?key=estacao', 'Estação');
-    menuMap.set('/?key=salaestar', 'Sala De Estar');
-    menuMap.set('/?key=suite', 'Suíte');
+    menuMap.set('/?key=estacao&name=Estação', 'Estação');
+    menuMap.set('/?key=salaestar&name=Sala', 'Sala De Estar');
+    menuMap.set('/?key=suite&name=Suíte', 'Suíte');
 
     const listMenu = []
     const [alertVisibility, setAlertVisibility] = React.useState(false);
     const [alertMessage, setAlertMessage] = React.useState(null);
+    const [pageTitle, setPageTitle] = React.useState('');
+
+    Navbar.changeTitle = function(m) {
+        setPageTitle(m);
+    }
 
     for (var [url, name] of menuMap) {
         listMenu.push(<a key={name} id={name} className="nav-link" href={url}>{name}</a>)
@@ -20,7 +25,10 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light top-line">
                 <div className="container-fluid">
-                    <a key="home" className="navbar-brand" href="?key=estacao">CASA</a>
+                    <a key="home" className="navbar-brand" href="?key=estacao">
+                        <img src="./home.png" alt="home icon" title="home icon" id="home-navbar-ico" height="50px" />
+                        &nbsp;<span id="pageTitle" className="pageTitle">{pageTitle}</span>
+                    </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

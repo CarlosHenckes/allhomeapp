@@ -2,13 +2,16 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import SockJsClient from 'react-stomp';
+import nav from "./Navbar";
 
 const Home = ({myMap}) => {
 
     const query = new URLSearchParams(useLocation().search);
     const id = query.get("key") ? query.get("key"): 'estacao';
-
+    const title = query.get("name") ? query.get("name") : 'Estação';
     const [responseData, setResponseData] = React.useState(null);
+
+    nav.changeTitle(title);
 
     React.useEffect(() => {
         axios.get(`https://allhomeapi.herokuapp.com/v1/sensors`) //https://allhomeapi.herokuapp.com/v1/sensors
@@ -22,9 +25,8 @@ const Home = ({myMap}) => {
     }, []);
     
     return (
-        <div className="app-container">
-            <h1>{id}</h1>
-            <div className="row">
+        <div className="app-container" key="appcontainer">
+            <div className="row" key="cardsrow">
             <SockJsClient url='https://allhomeapi.herokuapp.com/chat' 
                       topics={['/topic/news']}
                       onMessage={(msg) => {
@@ -33,7 +35,6 @@ const Home = ({myMap}) => {
                           m.push(msg);
                             setResponseData(m);
                       }}/>
-
 
                 {responseData && responseData.filter(rd => rd !== null).map(element => {
                     console.log("data found: " + responseData.length);
