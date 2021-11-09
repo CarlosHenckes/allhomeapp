@@ -9,8 +9,10 @@ const BarometerCard = (t) => {
     return (
         <div className="databox col-sm-6" key="tempbox">
             <a href="/detail?key=" alt="" title="">
-                    <div className="data" id="cardvalue"><span className="size30">{t.value}</span>
-                        <span className="size10">hPa</span></div>
+                    <div className="data" id="cardvalue">
+                        <span className="size30">{t.value}</span>
+                        <span className="size10">hPa</span>
+                    </div>
                     <div className="dataescaled" id="cardeq">{hectopascalsToMMMercury(t.value)}mm/Hg</div>
                     <div className="centerbox">
                         <div className="leftcenterbox">
