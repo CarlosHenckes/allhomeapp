@@ -4,9 +4,10 @@ import SockJsClient from 'react-stomp';
 const Navbar = () => {
 
     var menuMap = new Map();
-    menuMap.set('/?key=estacao&name=Estação', 'Estação');
-    menuMap.set('/?key=salaestar&name=Sala', 'Sala De Estar');
-    menuMap.set('/?key=suite&name=Suíte', 'Suíte');
+    menuMap.set('/?key=estacao&name=Estação', 'estacao');
+    menuMap.set('/?key=salaestar&name=Sala', 'salaestar');
+    menuMap.set('/?key=suite&name=Suíte', 'suite');
+    menuMap.set('/?key=lagoon&name=Lago', 'lagoon');
 
     const listMenu = []
     const [alertVisibility, setAlertVisibility] = React.useState(false);
@@ -18,7 +19,14 @@ const Navbar = () => {
     }
 
     for (var [url, name] of menuMap) {
-        listMenu.push(<a key={name} id={name} className="nav-link" href={url}>{name}</a>)
+        listMenu.push(<div className="col">
+                <a key={name} id={name} href={url}>
+                    <div className="card">
+                        <img src={'./' + name +'.png'} id={'ico-' + name} alt={'ico-' + name} 
+                            title={'ico-' + name} width="50px" />
+                    </div>
+                </a>
+            </div>)
     }
 
     return (
@@ -33,7 +41,7 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
+                        <div class="row row-cols-4 row-cols-md-12 g-4 mt-2">
                             {listMenu}
                         </div>
                     </div>

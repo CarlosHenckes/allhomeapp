@@ -39,7 +39,7 @@ const Home = ({myMap}) => {
                 {responseData && responseData.filter(rd => rd !== null).map(element => {
                     console.log("data found: " + responseData.length);
                     if (element.location === id) {
-
+                        
                         let maps = new Map();
                         maps = element.values;
                         const myMap = new Map();

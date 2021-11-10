@@ -133,3 +133,7 @@ div.row {
   font-size: 1.3em;
   font-weight: bold;
 }
+.card {
+  border: transparent;
+  background-color: transparent;
+}
