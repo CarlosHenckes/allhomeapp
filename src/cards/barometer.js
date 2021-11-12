@@ -17,8 +17,8 @@ const BarometerCard = (t) => {
                     <div className="centerbox">
                         <div className="leftcenterbox">
                             <img alt="uparrow" src="./arrow.png" className="uparrow" width="15px" />
-                            <span className="higher">1023</span>
-                            <span className="lower">1020</span>
+                            <span className="higher">{t.max}</span>
+                            <span className="lower">{t.min}</span>
                             <img className="downarrow" alt="down arrow" src="./arrow.png" width="15px" />
                         </div>
                     <div className="icon">
