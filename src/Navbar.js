@@ -8,6 +8,11 @@ const Navbar = () => {
     menuMap.set('/?key=salaestar&name=Sala', 'salaestar');
     menuMap.set('/?key=suite&name=Suíte', 'suite');
     menuMap.set('/?key=lagoon&name=Lago', 'lagoon');
+    menuMap.set('/?key=office&name=Escritório', 'office');
+    menuMap.set('/?key=shop&name=Oficina', 'shop');
+    menuMap.set('/?key=guestroom&name=Quarto Hospedes', 'guestroom');
+    menuMap.set('/?key=aquarium&name=Aquário', 'aquarium');
+    menuMap.set('/?key=plantbed&name=Horta', 'plantbed');
 
     const listMenu = []
     const [alertVisibility, setAlertVisibility] = React.useState(false);
@@ -20,10 +25,10 @@ const Navbar = () => {
 
     for (var [url, name] of menuMap) {
         listMenu.push(<div className="col">
-                <a key={name} id={name} href={url}>
-                    <div className="card">
+                <a key={'lnk' + name} id={name} href={url}>
+                    <div className="card cardtrans" key={'key' + name}>
                         <img src={'./' + name +'.png'} id={'ico-' + name} alt={'ico-' + name} 
-                            title={'ico-' + name} width="50px" />
+                            title={'ico-' + name} width="45px" />
                     </div>
                 </a>
             </div>)
@@ -37,11 +42,11 @@ const Navbar = () => {
                         <img src="./home.png" alt="home icon" title="home icon" id="home-navbar-ico" height="50px" />
                         &nbsp;<span id="pageTitle" className="pageTitle">{pageTitle}</span>
                     </a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="row row-cols-4 row-cols-md-12 g-4 mt-2">
+                    <div className="collapse navbar-collapse mt-2 navcards" id="navbarNavAltMarkup">
+                        <div className="row row-cols-5 row-cols-md-12 row-cols-lg-12 row-cols-xl-12 g-4">
                             {listMenu}
                         </div>
                     </div>

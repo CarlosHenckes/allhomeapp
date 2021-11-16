@@ -30,10 +30,9 @@ const Home = ({myMap}) => {
             <SockJsClient url='https://allhomeapi.herokuapp.com/chat' 
                       topics={['/topic/news']}
                       onMessage={(msg) => {
-                          console.log(msg);
-                          var m = [];
-                          m.push(msg);
-                            setResponseData(m);
+                        var m = [];
+                        m.push(msg);
+                        setResponseData(m);
                       }}/>
 
                 {responseData && responseData.filter(rd => rd !== null).map(element => {

@@ -12,7 +12,7 @@ const Detail = () => {
   return (
     <div className="app-container">
       <h1>Details</h1>
-        <SockJsClient url='https://allhomeapi.herokuapp.com/chat' 
+        <SockJsClient url='http://localhost:9000/chat' 
                       topics={['/topic/news']}
                       onMessage={(msg) => {
                         console.log(msg);
