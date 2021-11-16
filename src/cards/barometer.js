@@ -7,27 +7,23 @@ function hectopascalsToMMMercury(hpa) {
 const BarometerCard = (t) => {
 
     return (
-        <div className="databox col-sm-6" key="tempbox">
-            <a href="/detail?key=" alt="" title="">
-                    <div className="data" id="cardvalue">
-                        <span className="size30">{t.value}</span>
-                        <span className="size10">hPa</span>
-                    </div>
-                    <div className="dataescaled" id="cardeq">{hectopascalsToMMMercury(t.value)}mm/Hg</div>
-                    <div className="centerbox">
-                        <div className="leftcenterbox">
-                            <img alt="uparrow" src="./arrow.png" className="uparrow" width="15px" />
-                            <span className="higher">{t.max}</span>
-                            <span className="lower">{t.min}</span>
-                            <img className="downarrow" alt="down arrow" src="./arrow.png" width="15px" />
-                        </div>
-                    <div className="icon">
-                        <img id="cardimage" alt="Thermometer" title="Thermometer" src="./barometer.png" height="70px" className="ico_temp" />
-                    </div>
-                    <div className="righttcenterbox">&nbsp;</div>
+        <div className="box" key="tempbox">
+            <div className="ico-box">
+                <img src="./barometer.png" alt="" className="ico-box-image" height="50px" />
+            </div>
+            <div className="data-box">
+                <div className="main-data font-34">{t.value}
+                    <span className="main-data-min">hPa</span>
                 </div>
-                <div className="label" id="cardlabel">PRESSÃO ATM.</div>
-            </a>
+                <div className="ref-data">{hectopascalsToMMMercury(t.value)}mm/Hg</div>
+            </div>
+            <div className="resume-box">
+                <div className="resume-box-partial">
+                    {t.max}hPa<img src="./uparrow.png" alt="" className="ico-box-image" height="14px" /><br />
+                    {t.min}hPa<img src="./downarrow.png" alt="" className="ico-box-image" height="14px" />
+                </div>
+                <div className="resume-box-title">PRESSÃO ATM.</div>
+            </div>
         </div>
     )
 }

@@ -9,28 +9,25 @@ function celsiusToFahrenheit(celsius) {
 const TemperatureCard = (t) => {
 
     return (
-        <div className="databox col-sm-6" key="tempbox">
-            <a href="/detail?key=" alt="" title="">
-                    <div className="data" id="cardvalue">
-                        <span className="size30">{t.value}°C</span>
-                    </div>
-                    <div className="dataescaled" id="cardeq">
-                        {celsiusToFahrenheit(t.value)}°F
-                    </div>
-                    <div className="centerbox">
-                        <div className="leftcenterbox">
-                            <img src="./arrow.png" className="uparrow" alt="up arrow" width="15px" />
-                            <span className="higher">{t.max}</span>
-                            <span className="lower">{t.min}</span>
-                            <img className="downarrow" src="./arrow.png" alt="down arrow" width="15px" />
-                        </div>
-                        <div className="icon">
-                            <img id="cardimage" alt="Thermometer" title="Thermometer" src="./thermometer.svg" height="70px" className="ico_temp" />
-                        </div>
-                        <div className="righttcenterbox">&nbsp;</div>
-                    </div>
-                <div className="label" id="cardlabel">TEMPERATURA</div>
-            </a>
+        <div className="box" key="tempbox">
+            <div className="ico-box">
+                <img src="./thermometer.svg" alt="" className="ico-box-image" height="50px" />
+            </div>
+
+            <div className="data-box">
+                <div className="main-data font-34">{t.value}
+                    <span className="main-data-min">°C</span>
+                </div>
+                <div className="ref-data">{celsiusToFahrenheit(t.value)}°F</div>
+            </div>
+            
+            <div className="resume-box">
+                <div className="resume-box-partial">
+                    {t.max}°C<img src="./uparrow.png" alt="" className="ico-box-image" height="14px" /><br/>
+                    {t.min}°C<img src="./downarrow.png" alt="" className="ico-box-image" height="14px" />
+                </div>
+                <div className="resume-box-title">TEMPERATURA</div>
+            </div>
         </div>
     )
 }

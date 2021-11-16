@@ -3,17 +3,20 @@ import React from "react";
 const MethaneCard = (t) => {
 
     return (
-        <div className="databox col-sm-6">
-
-                <div className="data" id="cardvalue">
-                    <span className="size30">{t.value}</span>
-                    <span className="size10">ppm</span>
-                </div>
-                <div className="dataescaled" id="cardeq">&nbsp;</div>
-            <div className="icon">
-            <img id="cardimage" alt="Metano" title="Metano" src="./methane.png" height="70px" className="ico_mgitetano" />
+        <div className="box" key="tempbox">
+            <div className="ico-box">
+                <img src="./methane.png" alt="Metano" className="ico-box-image" height="45px" />
             </div>
-            <div className="label" id="cardlabel">METANO</div>
+            <div className="data-box">
+                <div className="main-data font-34">{t.value}
+                    <span className="main-data-min">ppm</span>
+                </div>
+                <span className="ref-data">&nbsp;</span>
+            </div>
+            <div className="resume-box">
+                <div className="resume-box-partial">&nbsp;<br /></div>
+                <div className="resume-box-title">METANO</div>
+            </div>
         </div>
     )
 }
