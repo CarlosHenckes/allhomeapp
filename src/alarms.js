@@ -9,7 +9,7 @@ const Alarm = () => {
     const [responseData, setResponseData] = React.useState(null);
 
     React.useEffect(() => {
-        axios.get(`http://localhost:9000/v1/sensors`) //https://allhomeapi.herokuapp.com/v1/sensors
+        axios.get(`https://allhomeapi.herokuapp.com/v1/sensors`) //https://allhomeapi.herokuapp.com/v1/sensors
             .then((response) => {
                 setResponseData(response.data);
                 console.log(response);

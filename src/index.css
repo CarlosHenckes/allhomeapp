@@ -54,6 +54,9 @@ div.row {
   text-align: center;
   margin: 0.7em 0;
 }
+.icon-center {
+  text-align: center;
+}
 .ico-box-image {
   vertical-align: middle;
   margin-left: 3px;
@@ -132,6 +135,18 @@ div.row {
   background-color: white;
   width: 96%;
 }
+.config-label {
+  text-align: center;
+  font-family: Calibri;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 1em;
+  margin-top: 5px;
+}
+.card-conf-round {
+  border-radius: 12px;
+  box-shadow: 3px 3px darkgrey;
+} 
 
 /* SWITCH */
 .switch {
