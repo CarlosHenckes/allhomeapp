@@ -3,13 +3,14 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import SockJsClient from 'react-stomp';
 import nav from "./Navbar";
+import lastUpdated from "./cards/LastUpdated";
 
 const Home = ({myMap}) => {
 
     const query = new URLSearchParams(useLocation().search);
     const id = query.get("key") ? query.get("key"): 'estacao';
     const title = query.get("name") ? query.get("name") : 'Estação';
-    const [responseData, setResponseData] = React.useState(null);
+    const [responseData, setResponseData] = React.useState([]);
 
     nav.changeTitle(title);
 
@@ -53,6 +54,7 @@ const Home = ({myMap}) => {
                                 console.log("Module [" + k + "] does not exist");
                             }
                         }
+                        myMap.set(lastUpdated(element.time));
                         return myMap;
                     }
                 })}

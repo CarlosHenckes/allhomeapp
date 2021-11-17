@@ -121,6 +121,17 @@ div.row {
 .font-main {
   font-size: 3.0em;
 }
+.updated {
+  text-align: right;
+  font-family: calibri;
+  border-radius: 10px;
+  border: 1px solid dimgray;
+  margin: 2px 2px 10px 2px;
+  padding: 5px;
+  box-shadow: 3px 3px darkgrey;
+  background-color: white;
+  width: 96%;
+}
 
 /* SWITCH */
 .switch {
