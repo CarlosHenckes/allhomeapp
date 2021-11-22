@@ -5,6 +5,7 @@ import Home from './Home';
 import Detail from './detail';
 import Config from './Configs';
 import Alarm from './alarms';
+import Chart from './Chart';
 
 function Routes() {
     return (
@@ -13,6 +14,7 @@ function Routes() {
             <Route component={Detail} path="/detail"/>
             <Route component={Config} path="/configs"/>
             <Route component={Alarm} path="/alarms"/>
+            <Route component={Chart} path="/charts"/>
         </BrowserRouter>
     )
 }

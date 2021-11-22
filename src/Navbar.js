@@ -24,7 +24,7 @@ const Navbar = () => {
     }
 
     for (var [url, name] of menuMap) {
-        listMenu.push(<div className="col">
+        listMenu.push(<div className="col" key={'col'+ name}>
                 <a key={'lnk' + name} id={name} href={url}>
                     <div className="card cardtrans" key={'key' + name}>
                         <img src={'./' + name +'.png'} id={'ico-' + name} alt={'ico-' + name} 
