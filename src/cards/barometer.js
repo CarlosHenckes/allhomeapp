@@ -4,10 +4,10 @@ function hectopascalsToMMMercury(hpa) {
     return Math.floor(hpa * 0.750062);
 }
 
-const BarometerCard = (t) => {
+const BarometerCard = (e, t) => {
 
     return (
-        <div className="box" key="tempbox">
+        <div className="box" key="tempbox"><a href={"/charts?location="+ e.location +"&key=barometer"}>
             <div className="ico-box">
                 <img src="./barometer.png" alt="" className="ico-box-image" height="50px" />
             </div>
@@ -23,7 +23,7 @@ const BarometerCard = (t) => {
                     {t.min}hPa<img src="./downarrow.png" alt="" className="ico-box-image" height="14px" />
                 </div>
                 <div className="resume-box-title">PRESSÃO ATM.</div>
-            </div>
+            </div></a>
         </div>
     )
 }

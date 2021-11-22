@@ -1,6 +1,6 @@
 import React from "react";
 
-const MethaneCard = (t) => {
+const MethaneCard = (e, t) => {
 
     return (
         <div className="box" key="tempbox">

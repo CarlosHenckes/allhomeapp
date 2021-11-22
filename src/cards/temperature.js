@@ -6,10 +6,10 @@ function celsiusToFahrenheit(celsius) {
     return Math.floor(celsiusToFahrenheit);
 }
 
-const TemperatureCard = (t) => {
+const TemperatureCard = (e, t) => {
 
     return (
-        <div className="box" key="tempbox">
+        <div className="box" key="tempbox"><a href={"/charts?location="+ e.location +"&key=temperature"}>
             <div className="ico-box">
                 <img src="./thermometer.svg" alt="" className="ico-box-image" height="50px" />
             </div>
@@ -27,7 +27,7 @@ const TemperatureCard = (t) => {
                     {t.min}°C<img src="./downarrow.png" alt="" className="ico-box-image" height="14px" />
                 </div>
                 <div className="resume-box-title">TEMPERATURA</div>
-            </div>
+            </div></a>
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
-const HumidityCard = (t) => {
+const HumidityCard = (e, t) => {
 
     return (
-        <div className="box" key="tempbox">
+        <div className="box" key="tempbox"><a href={"/charts?location="+ e.location +"&key=humidity"}>
             <div className="ico-box">
                 <img src="./humidity.png" alt="Humidade" className="ico-box-image" height="45px" />
             </div>
@@ -19,7 +19,7 @@ const HumidityCard = (t) => {
                     {t.min}%<img src="./downarrow.png" alt="" className="ico-box-image" height="14px" />
                 </div>
                 <div className="resume-box-title">HUMIDADE</div>
-            </div>
+            </div></a>
         </div>
     )
 }
