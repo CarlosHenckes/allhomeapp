@@ -29,17 +29,20 @@ const Chart = () => {
     }, []);
 
     return (
-        <div className="chart">
-            <ResponsiveContainer>
-                <LineChart data={responseData} margin={{ right: 8, left: -30, top: 4 }}>
-                    <XAxis dataKey="day" interval={'preserveStartEnd'} />
-                    <YAxis domain={intervals.get(query.get("key"))}></YAxis>
-                    <Legend />
-                    <Tooltip />
-                    <Line dataKey="max" stroke="red" />
-                    <Line dataKey="min" stroke="blue"/>
-                </LineChart>
-            </ResponsiveContainer>
+        <div className="app-container" key="appcontainer">
+            <div className="bread">{query.get("location") + '/' + query.get("key")}</div>
+            <div className="chart">
+                <ResponsiveContainer>
+                    <LineChart data={responseData} margin={{ right: 8, left: -30, top: 4 }}>
+                        <XAxis dataKey="day" interval={'preserveStartEnd'} />
+                        <YAxis domain={intervals.get(query.get("key"))}></YAxis>
+                        <Legend />
+                        <Tooltip />
+                        <Line dataKey="max" stroke="red" />
+                        <Line dataKey="min" stroke="blue"/>
+                    </LineChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     )
 }
