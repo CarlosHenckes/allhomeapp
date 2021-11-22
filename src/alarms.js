@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from "axios";
-import nav from "./Navbar";
+import Nav from "./Navbar";
+import RangeSlider from "./components/RangeSlider";
 
 const Alarm = () => {
 
-    nav.changeTitle('Alarms');
+    Nav.changeTitle('Alarms');
 
     const [responseData, setResponseData] = React.useState(null);
 
@@ -23,28 +24,29 @@ const Alarm = () => {
         <div className="app-container" key="appcontainer">
             <div className="accordion" id="accordionExample">
                 {responseData && responseData.map(element => {
+                    const myMap = new Map();
+                    for (let [k, v] of Object.entries(element.values)) {
+                        console.log("k: "+k+"- v:" + v)
+                        myMap.set(RangeSlider(element.location, k, v));
+                    }
                         return (
                             <div className="accordion-item" key={'key-' + element.location}>
                                 <h2 className="accordion-header" id={'head-' + element.location}>
                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={'#collapse-' + element.location} aria-expanded="false" aria-controls={'collapse-' + element.location}>
-                                    {element.location}
+                                    <strong>{element.location}</strong>
                                 </button>
                                 </h2>
                                 <div id={'collapse-' + element.location} className="accordion-collapse collapse" aria-labelledby={'head-' + element.location} data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <ul>
-                                        { Object.keys(element.values).map(k => {
-                                                return (<li>{k}</li>)
-                                            })
-                                        }
-                                    </ul>
-                                </div>
+                                    <div className="accordion-body">
+                                        { myMap }
+                                    </div>
                                 </div>
                             </div>
                         )
                     })
                 }
             </div>
+            <div id="slider"></div>
         </div>
     )
 }

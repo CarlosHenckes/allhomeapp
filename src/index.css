@@ -1,3 +1,4 @@
+
 /* GENERAL */
 body {
   margin: 0;
@@ -47,6 +48,12 @@ div.row {
     box-shadow: 3px 3px darkgrey;
     background-color: white;
     width: 96%;
+}
+.box a:link {
+  color: black;
+}
+.box a:visited {
+  color: black;
 }
 .ico-box {
   float: left;
@@ -147,6 +154,27 @@ div.row {
   border-radius: 12px;
   box-shadow: 3px 3px darkgrey;
 } 
+
+/* LIMITS */
+.card-limits {
+  margin-bottom: 35px;
+}
+.card-limits-title {
+  font-family: Calibri;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.card-limits-slider {
+  margin: 18px 0px 30px 0px;
+}
+
+/* CHART */
+.chart {
+  width: 97%;
+  height: 300px;
+  margin-top: 15px;
+  margin-left: 5px;
+}
 
 /* SWITCH */
 .switch {

@@ -48,7 +48,7 @@ const Home = ({myMap}) => {
                             try {
                                 if (require('./cards/'+ k).default) {
                                     var cardToRender = require('./cards/'+ k).default
-                                    myMap.set(cardToRender(v));
+                                    myMap.set(cardToRender(element, v));
                                 }
                             } catch(ex) {
                                 console.log("Module [" + k + "] does not exist");

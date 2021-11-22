@@ -35,11 +35,13 @@ const Config = () => {
                     <div className="card databoxconfig card-conf-round">
                         <div className="card-body">
                             <div className="icon-center">
-                                <img src="./ico-temp.png" width="50px" alt="Configurations" />
+                                <a href="/charts" alt="lnk-chart" key="k-chart">
+                                    <img src="./ico-temp.png" width="50px" alt="Configurations" />
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div className="label config-label no-wrap">Nono</div>
+                    <div className="label config-label no-wrap">Charts</div>
                 </div>
 
                 <div className="col">
